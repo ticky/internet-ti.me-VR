@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v7-latin-regular.woff2') format('woff2'),
+       url('../fonts/inter-v7-latin-regular.woff') format('woff'),
+       url('../fonts/inter-v7-latin-regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v7-latin-600.woff2') format('woff2'),
+       url('../fonts/inter-v7-latin-600.woff') format('woff'),
+       url('../fonts/inter-v7-latin-600.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v7-latin-700.woff2') format('woff2'),
+       url('../fonts/inter-v7-latin-700.woff') format('woff'),
+       url('../fonts/inter-v7-latin-700.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/inter-v7-latin-900.woff2') format('woff2'),
+       url('../fonts/inter-v7-latin-900.woff') format('woff'),
+       url('../fonts/inter-v7-latin-900.ttf') format('ttf');
+}
+
+html {
+  font-family: Inter, system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Lucida Grande", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+body {
+  margin: 1em 2em;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  background: rgba(0,0,0,0.5);
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 2em;
+}
+
+span.time {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+span.time:before {
+  content: "@";
+  vertical-align: 0.2em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+span.at {
+  vertical-align: 0.2em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}

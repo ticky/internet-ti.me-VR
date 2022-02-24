@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>internet-ti.me VR - Launcher</title>
+	<script src="js/ovrt-helper.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/syle.css">
+</head>
+<body>
+	<script type="text/javascript">
+		const ovrt = new OVRT();
+
+		window.addEventListener('api-ready', (event) => {
+			ovrt.setCurrentBrowserTitle("internet-ti.me VR - Launcher");
+		});
+
+		function openChatWindow() {
+			ovrt.getWristwatchTransform().then((transform) => {
+				ovrt.spawnOverlay({
+					...transform,
+					size: 0.05,
+					opacity: 1,
+					curvature: 0,
+					framerate: 15,
+					ecoMode: true,
+					lookHiding: true,
+					shouldSave: true
+				})
+				.then((overlay) => {
+					document.getElementById("openedText").style.opacity = 1;
+					overlay.setBrowserOptionsEnabled(false);
+					overlay.setContent(
+						0, // Window Type: Web Page
+						{
+							url: 'watch.html',
+							width: 256,
+							height: 128
+						}
+					);
+				});
+			});
+		}
+	</script>
+	<h1>internet-ti.me VR</h1>
+	<iframe src="watch.html" width="100%" height="128" frameborder="0"></iframe>
+	<button id="openButton" onclick="openChatWindow()">Open Widget</button>
+	<h2 id="openedText" style="opacity: 0;">internet-ti.me VR has been spawned on your wristwatch.</h2>
+</body>
+</html>

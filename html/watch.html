@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>internet-ti.me VR</title>
+	<script src="js/ovrt-helper.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/syle.css">
+</head>
+<body>
+	<script type="text/javascript">
+		const ovrt = new OVRT();
+
+		window.addEventListener('api-ready', (event) => {
+			ovrt.setCurrentBrowserTitle("internet-ti.me VR");
+		});
+
+		const output = document.createElement('span');
+		output.classList.add('time');
+		document.body.appendChild(output);
+		let last;
+
+		const updateTime = () => {
+			const date = new Date();
+
+			let hours = date.getUTCHours();
+			if (hours == 23) {
+				hours = 0;
+			} else {
+				hours++;
+			}
+
+			const beats = Math.floor((date.getUTCSeconds() + date.getUTCMinutes() * 60 + hours * 3600) / 86.4);
+
+			if (beats !== last) {
+				last = beats;
+				output.innerText = `@${beats.toLocaleString(undefined, { minimumIntegerDigits: 3 })}`;
+			}
+
+			window.requestAnimationFrame(updateTime);
+		};
+
+		updateTime();
+	</script>
+</body>
+</html>
