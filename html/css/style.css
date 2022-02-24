@@ -2,41 +2,34 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/inter-v7-latin-regular.woff2') format('woff2'),
-       url('../fonts/inter-v7-latin-regular.woff') format('woff'),
-       url('../fonts/inter-v7-latin-regular.ttf') format('ttf');
+  src: url('../fonts/inter-v7-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/inter-v7-latin-600.woff2') format('woff2'),
-       url('../fonts/inter-v7-latin-600.woff') format('woff'),
-       url('../fonts/inter-v7-latin-600.ttf') format('ttf');
+  src: url('../fonts/inter-v7-latin-600.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/inter-v7-latin-700.woff2') format('woff2'),
-       url('../fonts/inter-v7-latin-700.woff') format('woff'),
-       url('../fonts/inter-v7-latin-700.ttf') format('ttf');
+  src: url('../fonts/inter-v7-latin-700.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
-  src: url('../fonts/inter-v7-latin-900.woff2') format('woff2'),
-       url('../fonts/inter-v7-latin-900.woff') format('woff'),
-       url('../fonts/inter-v7-latin-900.ttf') format('ttf');
+  src: url('../fonts/inter-v7-latin-900.woff2') format('woff2');
 }
 
 html {
   font-family: Inter, system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Lucida Grande", Arial, sans-serif;
   color: #fff;
+  background: gray;
   text-align: center;
 }
 
