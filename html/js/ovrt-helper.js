@@ -235,6 +235,10 @@ class OVRTOverlay {
 		window.SetOverlaySetting(`${this._uid}`, 10, enable);
 	}
 	
+	setRecenter(enable) {
+		window.SetOverlaySetting(`${this._uid}`, 11, enable);
+	}
+	
 	setBrowserResolution(width, height) {
 		window.SetBrowserResolution(`${this._uid}`, width, height);
 	}
@@ -404,6 +408,16 @@ class OVRT {
 		});
 	}
 	
+	getOverlays() {
+		return new Promise((resolve) => {
+			const id = window.registerGlobalCallback(this, result => {
+				return resolve(result[0]);
+			});
+
+			this._callAPIFunction("GetOverlays", ["callGlobalCallback", id ]);
+		});
+	}
+	
 	isAppRunningWithTitle(title) {
 		return new Promise((resolve) => {
 			const id = window.registerGlobalCallback(this, result => {
@@ -419,7 +433,7 @@ class OVRT {
 	}
 	
 	broadcastMessage(msg) {
-		this._callAPIFunction("BroadcastMessage", [ msg ]);
+		this._callAPIFunction("BroadcastMessage", [ JSON.stringify(msg) ]);
 	}
 	
 	closeEntryApp() {
@@ -452,6 +466,10 @@ class OVRT {
 
 			this._callAPIFunction("GetWristwatchTransform", ["callGlobalCallback", id ]);
 		});
+	}
+	
+	sendOSCMessage(address, msg, type) {
+		this._callAPIFunction("SendOSCMessage", [ address, msg, type ]);
 	}
 }
 
