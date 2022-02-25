@@ -19,7 +19,7 @@
 			ovrt.getWristwatchTransform().then((transform) => {
 				ovrt.spawnOverlay({
 					...transform,
-					size: 0.05,
+					size: 0.125,
 					opacity: 1,
 					curvature: 0,
 					framerate: 15,
@@ -28,16 +28,19 @@
 					shouldSave: true
 				})
 				.then((overlay) => {
-					document.getElementById("openedText").style.opacity = 1;
-					overlay.setBrowserOptionsEnabled(false);
 					overlay.setContent(
 						0, // Window Type: Web Page
 						{
 							url: 'watch.html',
-							width: 256,
+							width: 320,
 							height: 128
 						}
 					);
+					document.getElementById("openedText").style.opacity = 1;
+					overlay.setBrowserOptionsEnabled(false);
+					overlay.setPinned(true);
+					overlay.setInputBlocked(true);
+					overlay.translateUp(-0.0125 - transform.size / 2);
 				});
 			});
 		}
